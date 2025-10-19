@@ -1,4 +1,4 @@
-import { Card, Typography, Avatar, Spin } from "antd";
+import { Card, Typography, Avatar, Button } from "antd";
 import {
   RobotOutlined,
   UserOutlined,
@@ -15,6 +15,7 @@ export interface ChatBubbleProps {
 export default function ChatBubble({ msg }: ChatBubbleProps) {
   const isUser = msg.role === "user";
   const isImage = msg.type === "image";
+  const isAudio = msg.type === "audio";
 
   const avatarIcon = isUser ? (
     <UserOutlined />
@@ -78,9 +79,16 @@ export default function ChatBubble({ msg }: ChatBubbleProps) {
                   alt="AI Generated"
                   className="rounded-xl max-w-[250px] max-h-[250px] object-cover shadow-sm"
                 />
-                {msg.streaming && (
+                {/* {msg.streaming && (
                   <Spin size="small" className="mt-2 opacity-70" />
-                )}
+                )} */}
+              </div>
+            ) : isAudio ? (
+              <div className="flex flex-col items-center">
+                <Button onClick={async () => {
+                  const audio = new Audio(msg.content);
+                  await audio.play();
+                }}>Play</Button>
               </div>
             ) : (
               <Text

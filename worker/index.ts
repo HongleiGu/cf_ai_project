@@ -1,4 +1,5 @@
 import handleChatRequest from "./chat/Chat";
+import handleImageRequest from "./image/Image";
 import type { Env } from "./types";
 
 export default {
@@ -19,9 +20,24 @@ export default {
         // Method not allowed for other request types
         return new Response("Method not allowed", { status: 405 });
       }
-      return Response.json({
-        name: "Cloudflare",
-      });
+      if (url.pathname === "/api/image") {
+        // Handle POST requests for chat
+        if (request.method === "POST") {
+          return handleImageRequest(request, env);
+        }
+
+        // Method not allowed for other request types
+        return new Response("Method not allowed", { status: 405 });
+      }
+      // if (url.pathname === "/api/tts") {
+      //   // Handle POST requests for chat
+      //   if (request.method === "POST") {
+      //     return handleTTSRequest(request, env);
+      //   }
+
+      //   // Method not allowed for other request types
+      //   return new Response("Method not allowed", { status: 405 });
+      // }
     }
 		return new Response(null, { status: 404 });
   },

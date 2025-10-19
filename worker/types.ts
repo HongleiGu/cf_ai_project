@@ -14,6 +14,9 @@ export interface Env {
    * Binding for static assets.
    */
   ASSETS: { fetch: (request: Request) => Promise<Response> };
+
+  // Eleven Labs api
+  ELEVENLABS_API_KEY: string
 }
 
 /**
@@ -25,11 +28,19 @@ export interface ChatMessage {
   content: string;
   created_at: string;
   streaming: boolean;
-  type: "text" | "image"
+  type: "text" | "image" | "audio"
 }
 
 export interface ChatAPIParam {
   messages: ChatMessage[]
+}
+
+export interface ImageAPIParam {
+  prompt: string;
+}
+
+export interface TTSAPIParam {
+  prompt: string;
 }
 
 export function emptyMessage(

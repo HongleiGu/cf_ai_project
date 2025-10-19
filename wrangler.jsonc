@@ -17,6 +17,16 @@
     "binding": "AI",
 		"remote": true
   },
+	"vars": {
+    "ELEVENLABS_API_KEY": "sk_70a1414ecbe4107b0be9ff6311956bcba0f9cdabc948f449"
+  },
+	"env": {
+    "dev": {
+      "vars": {
+        "ELEVENLABS_API_KEY": "sk_70a1414ecbe4107b0be9ff6311956bcba0f9cdabc948f449"
+      }
+    }
+  }
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
