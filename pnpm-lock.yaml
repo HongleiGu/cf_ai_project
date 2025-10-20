@@ -11,9 +11,6 @@ importers:
       '@ant-design/icons':
         specifier: ^6.1.0
         version: 6.1.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@cloudflare/workers-types':
-        specifier: ^4.20251011.0
-        version: 4.20251011.0
       '@elevenlabs/elevenlabs-js':
         specifier: ^2.19.0
         version: 2.19.0
@@ -48,6 +45,9 @@ importers:
       '@cloudflare/vite-plugin':
         specifier: ^1.13.13
         version: 1.13.13(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(lightningcss@1.30.1))(workerd@1.20251008.0)(wrangler@4.43.0(@cloudflare/workers-types@4.20251011.0))
+      '@cloudflare/workers-types':
+        specifier: ^4.20251011.0
+        version: 4.20251011.0
       '@eslint/js':
         specifier: ^9.33.0
         version: 9.38.0
