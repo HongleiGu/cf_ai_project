@@ -1,7 +1,7 @@
 # app
 This is a app created with react and wrangler
 
-To run the app, do `pnpm dev`, I'll also deploy the app on cloudflare
+To run the app, do `pnpm dev`, it is also available on https://my-react-app.hongleigu19.workers.dev/ (please dont mind the name, I forgot to change it on project init)
 
 ## Usage:
 
